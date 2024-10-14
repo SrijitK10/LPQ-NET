@@ -32,7 +32,7 @@ def main(args):
     print(len(test_samples))
 
     test_generator = test_data_generator(
-        test_samples, batch_size, preprocess=preprocess
+        test_samples, batch_size, preprocess=preprocess, img_size=img_size
     )
 
     # Load the model

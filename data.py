@@ -53,7 +53,7 @@ def preprocessing_color(image):
 
 
 
-def train_data_generator(samples, batch_size=32, shuffle_data=True, preprocess=0,num_classes=2):
+def train_data_generator(samples, img_size, batch_size=32, shuffle_data=True, preprocess=0, num_classes=2):
     """
 
     Yields the next training batch.
@@ -80,7 +80,7 @@ def train_data_generator(samples, batch_size=32, shuffle_data=True, preprocess=0
                 img = cv2.imread(img_path)
                 if img is None:
                     continue
-                img = cv2.resize(img, (256, 256))
+                img = cv2.resize(img, (img_size, img_size))
                 
 
                 if preprocess == 0:
@@ -107,7 +107,7 @@ def train_data_generator(samples, batch_size=32, shuffle_data=True, preprocess=0
             yield X_train, y_train
 
 
-def validation_data_generator(samples, batch_size=32, shuffle_data=True, preprocess=0,num_classes=2):
+def validation_data_generator(samples, img_size, batch_size=32, shuffle_data=True, preprocess=0, num_classes=2):
     """
     Yields the next training batch.
     Suppose `samples` is an array [[image1_filename,label1], [image2_filename,label2],...].
@@ -133,7 +133,7 @@ def validation_data_generator(samples, batch_size=32, shuffle_data=True, preproc
                 img = cv2.imread(img_path)
                 if img is None:
                     continue
-                img = cv2.resize(img, (256, 256))
+                img = cv2.resize(img, (img_size, img_size))
                 
 
                 
@@ -163,7 +163,7 @@ def validation_data_generator(samples, batch_size=32, shuffle_data=True, preproc
             yield X_validation, y_validation
 
 
-def test_data_generator(samples, batch_size=32, shuffle_data=False, preprocess=0,num_classes=2):
+def test_data_generator(samples, img_size, batch_size=32, shuffle_data=False, preprocess=0, num_classes=2):
     """
     Yields the next training batch.
     Suppose `samples` is an array [[image1_filename,label1], [image2_filename,label2],...].
@@ -191,7 +191,7 @@ def test_data_generator(samples, batch_size=32, shuffle_data=False, preprocess=0
 
                 if img is None:
                     continue
-                img = cv2.resize(img, (256, 256))
+                img = cv2.resize(img, (img_size, img_size))
                 
 
                 if preprocess == 0:

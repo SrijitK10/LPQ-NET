@@ -42,8 +42,8 @@ def main(args):
 
 
 
-    train_generator=train_data_generator(train_samples,batch_size,preprocess= preprocess)
-    validation_generator = validation_data_generator(validation_samples,batch_size,preprocess = preprocess)
+    train_generator=train_data_generator(train_samples,batch_size,preprocess= preprocess,img_size=img_size) 
+    validation_generator = validation_data_generator(validation_samples,batch_size,preprocess = preprocess,img_size=img_size)
 
     # Create and compile the model
     model = LPQ_net(in_shape=img_shape, num_classes=num_classes)
