@@ -25,7 +25,7 @@ def main(args):
 
     preprocess = 1 if args.image_type == "grayscale" else 0
     batch_size = 32
-    test_data_path = "./test.csv"  # Path to the training data
+    test_data_path = "./csv/test.csv"  # Path to the training data
 
     test_samples = load_samples(test_data_path)
 
@@ -39,7 +39,7 @@ def main(args):
     model = (
         tf.keras.models.load_model("./models/LPQ_NET_Gray.keras")
         if args.image_type == "grayscale"
-        else tf.keras.models.load_model("./models/LPQ_GRAY.h5")
+        else tf.keras.models.load_model("./models/LPQ_NET_Color.keras")
     )
     batch_size = 32
 

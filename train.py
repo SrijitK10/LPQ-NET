@@ -28,8 +28,8 @@ def main(args):
     preprocess = 1 if args.image_type == 'grayscale' else 0
 
     # Load and preprocess the data
-    train_data_path = './train.csv'     # Path to the training data
-    validation_data_path='./validation.csv' # Path to the validation data
+    train_data_path = './csv/train.csv'     # Path to the training data
+    validation_data_path='./csv/validation.csv' # Path to the validation data
 
 
     train_samples = load_samples(train_data_path)
