@@ -88,14 +88,14 @@ This should arrange the file paths in the CSV files as follows:
 
 | Path                          | Truth |
 |--------------------------------|-------|
-| ./datasets/TRAIN/FAKE/000248.png| 0     |
-| ./datasets/TRAIN/FAKE/002054.png| 0     |
-| ./datasets/TRAIN/REAL/01426.png | 1     |
-| ./datasets/TRAIN/REAL/01582.png | 1     |
-| ./datasets/TRAIN/REAL/02444.png | 1     |
-| ./datasets/TRAIN/REAL/02673.png | 1     |
-| ./datasets/TRAIN/REAL/01015.png | 1     |
-| ./datasets/TRAIN/FAKE/002518.png| 0     |
+| ./datasets/train/fake/000248.png| 0     |
+| ./datasets/train/fake/002054.png| 0     |
+| ./datasets/train/real/01426.png | 1     |
+| ./datasets/train/real/01582.png | 1     |
+| ./datasets/train/real/02444.png | 1     |
+| ./datasets/train/real/02673.png | 1     |
+| ./datasets/train/real/01015.png | 1     |
+| ./datasets/train/fake/002518.png| 0     |
 
 
 Similarly, the test and validation CSV files will be created.
