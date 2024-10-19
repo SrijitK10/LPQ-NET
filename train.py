@@ -53,7 +53,10 @@ def main(args):
     model.compile(loss='binary_crossentropy', optimizer=opti, metrics=['accuracy'])
 
     # Train the model
-    model_filepath='LPQ_NET_Gray.keras'     # Path to save the model
+    if args.image_type == 'grayscale':
+        model_filepath = './models/LPQ_NET_Gray.keras'  # Path to save the model for grayscale images
+    else:
+        model_filepath = './models/LPQ_NET_Color.keras'    # Path to save the model
 
     checkpoint=ModelCheckpoint(model_filepath,monitor='val_accuracy',verbose=1, save_best_only=True, mode='max')
 

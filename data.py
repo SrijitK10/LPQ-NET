@@ -87,10 +87,6 @@ def train_data_generator(samples, img_size, batch_size=32, shuffle_data=True, pr
                     img = preprocessing_color(img)
                 elif preprocess == 1:
                     img = preprocessing(img)
-
-
-
-                # img = preprocessing(img)
                 
 
                 # Add example to arrays
@@ -134,16 +130,13 @@ def validation_data_generator(samples, img_size, batch_size=32, shuffle_data=Tru
                 if img is None:
                     continue
                 img = cv2.resize(img, (img_size, img_size))
-                
 
-                
-
-                # img=lpq_color_channels(img,winSize=3)
 
                 if preprocess == 0:
                     img = preprocessing_color(img)
                 elif preprocess == 1:
                     img = preprocessing(img)
+
 
                 # Add example to arrays
                 X_validation.append(img)
@@ -187,8 +180,6 @@ def test_data_generator(samples, img_size, batch_size=32, shuffle_data=False, pr
                 img_path = batch_sample[0]
                 label = batch_sample[1]
                 img = cv2.imread(img_path)
-                
-
                 if img is None:
                     continue
                 img = cv2.resize(img, (img_size, img_size))
@@ -198,6 +189,7 @@ def test_data_generator(samples, img_size, batch_size=32, shuffle_data=False, pr
                     img = preprocessing_color(img)
                 elif preprocess == 1:
                     img = preprocessing(img)
+
 
                 # Add example to arrays
                 X_test.append(img)
